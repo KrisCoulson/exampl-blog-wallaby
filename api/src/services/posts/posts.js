@@ -22,7 +22,7 @@ export const allPosts = async ({
   const offset = (page - 1) * limit
 
   return {
-    posts: db.post.findMany({
+    posts: await db.post.findMany({
       include: { tags: true },
       take: limit,
       skip: offset,

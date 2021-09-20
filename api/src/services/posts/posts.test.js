@@ -1,9 +1,9 @@
-import { posts } from './posts'
+import { allPosts } from './posts'
 
 describe('posts', () => {
   scenario('returns all posts', async (scenario) => {
-    const result = await posts()
+    const result = await allPosts({})
 
-    expect(result.length).toEqual(Object.keys(scenario.post).length)
+    expect(result.posts.length).toEqual(Object.keys(scenario.post).length)
   })
 })
